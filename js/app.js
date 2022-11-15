@@ -3,12 +3,30 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      message: "Hello Vue!",
+      toDoText: "",
+      toDoList: [
+        {
+          text: `Andare a Nevli`,
+          done: false,
+        },
+      ],
     };
   },
   methods: {
     prevDef(event) {
       event.preventDefault();
+    },
+    addToList() {
+      if (this.toDoText !== "") {
+        this.toDoList.push({
+          text: this.toDoText,
+          done: false,
+        });
+        this.toDoText = "";
+      }
+    },
+    removeFromList(index) {
+      this.toDoList.splice(index, 1);
     },
   },
 }).mount("#app");

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>To Do List</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -21,14 +21,18 @@
       </header>
       <div id="app">
         <form action="submit" @submit="prevDef">
-          <input type="text" placeholder="Inserisci Task" />
-          <button type="submit">Aggiungi</button>
+          <input v-model="toDoText" type="text" placeholder="Inserisci Task" />
+          <button @click="addToList" type="submit">Aggiungi</button>
         </form>
         <div class="task-field">
           <ul>
-            <li>
-              <div class="text checked">Andare al prato</div>
-              <div class="action"><i class="fa-solid fa-xmark"></i></div>
+            <li v-for="(task, index) in toDoList">
+              <div :class="(task.done === true)?`checked`:``" class="text">
+                {{task.text}}
+              </div>
+              <div @click="removeFromList(index)" class="action">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
             </li>
           </ul>
         </div>
