@@ -27,7 +27,11 @@
         <div class="task-field">
           <ul>
             <li v-for="(task, index) in toDoList">
-              <div :class="(task.done === true)?`checked`:``" class="text">
+              <div
+                @click="doneUndone(index)"
+                :class="(task.done === true)?`checked`:``"
+                class="text"
+              >
                 {{task.text}}
               </div>
               <div @click="removeFromList(index)" class="action">
