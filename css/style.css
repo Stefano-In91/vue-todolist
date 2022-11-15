@@ -36,6 +36,7 @@ input {
 }
 button {
   font-weight: bold;
+  cursor: pointer;
 }
 /* LISTATO ITEMS */
 .task-field {
@@ -57,6 +58,9 @@ li {
 }
 li div {
   padding: 1rem;
+}
+.action i {
+  cursor: pointer;
 }
 .checked {
   text-decoration: line-through;

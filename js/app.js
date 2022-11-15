@@ -6,4 +6,9 @@ createApp({
       message: "Hello Vue!",
     };
   },
+  methods: {
+    prevDef(event) {
+      event.preventDefault();
+    },
+  },
 }).mount("#app");
