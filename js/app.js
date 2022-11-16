@@ -25,12 +25,8 @@ createApp({
     removeFromList(index) {
       this.toDoList.splice(index, 1);
     },
-    doneUndone(index) {
-      if (!this.toDoList[index].done) {
-        this.toDoList[index].done = true;
-      } else {
-        this.toDoList[index].done = false;
-      }
+    doneUndone(task) {
+      task.done = !task.done;
     },
   },
 }).mount("#app");
