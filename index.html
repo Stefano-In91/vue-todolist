@@ -29,7 +29,7 @@
             <li v-for="(task, index) in toDoList">
               <div
                 @click="doneUndone(index)"
-                :class="(task.done === true)?`checked`:``"
+                :class="{checked : task.done}"
                 class="text"
               >
                 {{task.text}}
