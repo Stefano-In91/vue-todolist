@@ -13,9 +13,6 @@ createApp({
     };
   },
   methods: {
-    prevDef(event) {
-      event.preventDefault();
-    },
     addToList() {
       if (this.toDoText !== "") {
         this.toDoList.push({

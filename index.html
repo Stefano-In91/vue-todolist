@@ -20,9 +20,9 @@
         <img src="./img/logo.png" alt="logo" />
       </header>
       <div id="app">
-        <form action="submit" @submit="prevDef">
+        <form action="submit" @submit.prevent="addToList">
           <input v-model="toDoText" type="text" placeholder="Inserisci Task" />
-          <button @click="addToList" type="submit">Aggiungi</button>
+          <button type="submit">Aggiungi</button>
         </form>
         <div class="task-field">
           <ul>
